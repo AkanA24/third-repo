@@ -17,3 +17,14 @@ scenarios:
         assert:
           - contains:
               - "success"
+---
+execution:
+  concurrency: 5
+  hold-for: 2m
+  scenario: simple_scenario
+
+scenarios:
+  simple_scenario:
+    requests:
+      - url: https://example.com
+        method: GET
