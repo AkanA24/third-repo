@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    
     stages {
         stage('Checkout') {
             steps {
@@ -11,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 // This stage simulates a build step. You should replace this with your actual build commands.
-            bat 'echo "Building..."'
+                bat 'echo "Building..."'
             }
         }
         
@@ -21,7 +22,7 @@ pipeline {
                 bat 'echo "Testing..."'
             }
         }
-    }
+    } // Close stages block
     
     post {
         success {
@@ -32,5 +33,5 @@ pipeline {
             // This block specifies what to do if the pipeline fails.
             echo 'The pipeline has failed.'
         }
-    }
+    } // Close post block
 }
